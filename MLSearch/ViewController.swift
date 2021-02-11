@@ -11,7 +11,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        DetailRemoteRepository().fetchDetail(productId: "MLB1742066740") { result in
+            dump(result)
+        }
     }
 
 
