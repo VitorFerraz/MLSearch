@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct SearchResult: Codable {
+struct SearchResult: Codable, Hashable {
     let id: String
     let price: Double?
-    let shipping: Bool
     let thumbnail: String
     let title: String
 }

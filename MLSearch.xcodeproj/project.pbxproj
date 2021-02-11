@@ -32,6 +32,7 @@
 		904A898225D4BE1A00E741E6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A893325D4B54C00E741E6 /* NetworkError.swift */; };
 		904A898325D4BE1A00E741E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A88DC25D4B00B00E741E6 /* HTTPMethod.swift */; };
 		904A898425D4BE1A00E741E6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A88E225D4B07A00E741E6 /* Reachability.swift */; };
+		90634FAD25D59453004F83A5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90634FAC25D59453004F83A5 /* SearchView.swift */; };
 		90D5CCC925D4C57B009049E7 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCC825D4C57B009049E7 /* SearchRepository.swift */; };
 		90D5CCD325D4C5A4009049E7 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCD225D4C5A4009049E7 /* SearchResponse.swift */; };
 		90D5CCD925D4C5BE009049E7 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCD825D4C5BE009049E7 /* SearchResult.swift */; };
@@ -58,6 +59,9 @@
 		90D5CDC325D54B7D009049E7 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDC225D54B7D009049E7 /* DetailInteractor.swift */; };
 		90D5CDCA25D54BA4009049E7 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDC925D54BA4009049E7 /* DetailRouter.swift */; };
 		90D5CDDD25D55DED009049E7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDDC25D55DED009049E7 /* LoadingView.swift */; };
+		90FE105225D5A33600BA4378 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105125D5A33600BA4378 /* CollectionViewCell.swift */; };
+		90FE105925D5A4FE00BA4378 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */; };
+		90FE106025D5A57100BA4378 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105F25D5A57100BA4378 /* ProductViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +157,7 @@
 		904A895225D4BD9600E741E6 /* RequestNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RequestNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		904A895925D4BD9600E741E6 /* RequestNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNetworkTests.swift; sourceTree = "<group>"; };
 		904A895B25D4BD9600E741E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90634FAC25D59453004F83A5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		90D5CCC825D4C57B009049E7 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		90D5CCD225D4C5A4009049E7 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		90D5CCD825D4C5BE009049E7 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -179,6 +184,9 @@
 		90D5CDC225D54B7D009049E7 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		90D5CDC925D54BA4009049E7 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		90D5CDDC25D55DED009049E7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		90FE105125D5A33600BA4378 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		90FE105F25D5A57100BA4378 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +473,7 @@
 				90D5CD6725D4CC16009049E7 /* ViewController.swift */,
 				90D5CD9725D54724009049E7 /* Presenter.swift */,
 				90D5CDAC25D547D5009049E7 /* Router.swift */,
+				90FE105125D5A33600BA4378 /* CollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -485,6 +494,9 @@
 				90D5CD9025D5470A009049E7 /* SearchPresenter.swift */,
 				90D5CD9E25D54768009049E7 /* SearchInteractor.swift */,
 				90D5CDA525D547C7009049E7 /* SearchRouter.swift */,
+				90634FAC25D59453004F83A5 /* SearchView.swift */,
+				90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */,
+				90FE105F25D5A57100BA4378 /* ProductViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -763,6 +775,9 @@
 				90D5CDC325D54B7D009049E7 /* DetailInteractor.swift in Sources */,
 				904A891525D4B3AF00E741E6 /* DetailRepository.swift in Sources */,
 				904A890E25D4B30500E741E6 /* ProductDetailService.swift in Sources */,
+				90634FAD25D59453004F83A5 /* SearchView.swift in Sources */,
+				90FE105225D5A33600BA4378 /* CollectionViewCell.swift in Sources */,
+				90FE105925D5A4FE00BA4378 /* ProductCollectionViewCell.swift in Sources */,
 				90D5CD9825D54724009049E7 /* Presenter.swift in Sources */,
 				90D5CD9125D5470A009049E7 /* SearchPresenter.swift in Sources */,
 				90D5CDBC25D54B46009049E7 /* DetailPresenter.swift in Sources */,
@@ -770,6 +785,7 @@
 				90D5CDAD25D547D5009049E7 /* Router.swift in Sources */,
 				90D5CDB525D54B20009049E7 /* DetailViewController.swift in Sources */,
 				904A892225D4B43600E741E6 /* ProductDetailResponse.swift in Sources */,
+				90FE106025D5A57100BA4378 /* ProductViewModel.swift in Sources */,
 				90D5CD6825D4CC16009049E7 /* ViewController.swift in Sources */,
 				90D5CCDF25D4C616009049E7 /* SearchRemoteRepository.swift in Sources */,
 				90D5CDCA25D54BA4009049E7 /* DetailRouter.swift in Sources */,
