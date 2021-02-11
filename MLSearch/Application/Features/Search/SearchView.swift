@@ -18,7 +18,6 @@ protocol SearchViewDelegate: class {
 
 protocol SearchViewProtocol {
     func showLoading()
-    func stopLoading()
     func showError(with message: String)
     func reloadData()
 }
@@ -31,7 +30,6 @@ typealias SearchDataSource = UICollectionViewDiffableDataSource<SearchSection, P
 typealias SearchSnapshot = NSDiffableDataSourceSnapshot<SearchSection, ProductViewModel>
 
 final class SearchView: UIView, ViewConfigurator {
-    
     weak var delegate: SearchViewDelegate?
     private lazy var dataSource: SearchDataSource = {
         let dataSource = SearchDataSource(
@@ -58,7 +56,6 @@ final class SearchView: UIView, ViewConfigurator {
         searchController.showsSearchResultsController = true
         searchController.searchBar.barTintColor = StyleGuide.Color.primary
         searchController.searchBar.layer.borderColor = StyleGuide.Color.primary.cgColor
-
         searchController.searchBar.showsCancelButton = true
         searchController.searchBar.tintColor = StyleGuide.Color.Text.primary
         searchController.searchBar.searchTextField.backgroundColor = StyleGuide.Color.Background.white
@@ -94,11 +91,17 @@ final class SearchView: UIView, ViewConfigurator {
     }
     
     func addViewHierarchy() {
+        addSubview(loadingView)
         addSubview(collectionView)
-        
     }
     
     func setupConstraints() {
+        
+        loadingView.anchor(top: safeAreaLayoutGuide.topAnchor,
+                              leading: leadingAnchor,
+                              bottom: bottomAnchor,
+                              trailing: trailingAnchor)
+        
         collectionView.anchor(top: safeAreaLayoutGuide.topAnchor,
                               leading: leadingAnchor,
                               bottom: bottomAnchor,
@@ -137,18 +140,17 @@ extension SearchView: LoadingViewDelegate {
 
 extension SearchView: SearchViewProtocol {
     func showLoading() {
+        collectionView.isHidden = true
         loadingView.setState(with: .loading)
     }
     
-    func stopLoading() {
-        loadingView.setState(with: .hide)
-    }
-    
     func showError(with message: String) {
+        collectionView.isHidden = true
         loadingView.setState(with: .error(message: message))
     }
     
     func reloadData() {
+        collectionView.isHidden = false
         applySnapshot()
         loadingView.setState(with: .hide)
     }

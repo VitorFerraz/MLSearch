@@ -51,7 +51,7 @@ public final class LoadingView: UIView, ViewConfigurator {
     }()
     
     private lazy var containerStack: UIStackView = {
-       let stack = UIStackView(arrangedSubviews: [titleLabel, retryButton, spinner])
+       let stack = UIStackView(arrangedSubviews: [UIView(),titleLabel, retryButton, spinner, UIView()])
         stack.alignment = .center
         stack.axis = .vertical
         return stack
@@ -72,17 +72,13 @@ public final class LoadingView: UIView, ViewConfigurator {
     }
     
     public func setupConstraints() {
-        containerStack.anchor(top: topAnchor,
-                              leading: leadingAnchor,
-                              bottom: bottomAnchor,
-                              trailing: trailingAnchor, padding: UIEdgeInsets(top: StyleGuide.Spacing.small,
-                                                                       left: StyleGuide.Spacing.small,
-                                                                       bottom: StyleGuide.Spacing.small,
-                                                                       right: StyleGuide.Spacing.small))
+        containerStack.centerInSuperview(size: .init(width: 240, height: 240))
     }
     
     public func configureViews() {
         backgroundColor = .white
+        layer.cornerRadius = 15
+        clipsToBounds = true
     }
     
     private func didTapRetry() {
