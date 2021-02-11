@@ -57,6 +57,7 @@
 		90D5CDBC25D54B46009049E7 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDBB25D54B46009049E7 /* DetailPresenter.swift */; };
 		90D5CDC325D54B7D009049E7 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDC225D54B7D009049E7 /* DetailInteractor.swift */; };
 		90D5CDCA25D54BA4009049E7 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDC925D54BA4009049E7 /* DetailRouter.swift */; };
+		90D5CDDD25D55DED009049E7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CDDC25D55DED009049E7 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +178,7 @@
 		90D5CDBB25D54B46009049E7 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		90D5CDC225D54B7D009049E7 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		90D5CDC925D54BA4009049E7 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		90D5CDDC25D55DED009049E7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 				90D5CD2225D4C95C009049E7 /* SearchBar.swift */,
 				90D5CD4225D4CAB3009049E7 /* CollectionViewCell.swift */,
 				90D5CD4E25D4CB0D009049E7 /* UIImageView+SetUrl.swift */,
+				90D5CDDC25D55DED009049E7 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				90D5CD4F25D4CB0D009049E7 /* UIImageView+SetUrl.swift in Sources */,
 				90D5CD1B25D4C933009049E7 /* UIView+Constraints.swift in Sources */,
 				90D5CD2325D4C95C009049E7 /* SearchBar.swift in Sources */,
+				90D5CDDD25D55DED009049E7 /* LoadingView.swift in Sources */,
 				90D5CD3025D4C984009049E7 /* StyleGuide.swift in Sources */,
 				90D5CD3C25D4CA88009049E7 /* ViewConfigurator.swift in Sources */,
 			);
