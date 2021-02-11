@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90468CA925D5C8FF001F084F /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90468CA825D5C8FF001F084F /* Double+Currency.swift */; };
 		904A886E25D477B400E741E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A886D25D477B400E741E6 /* AppDelegate.swift */; };
 		904A887025D477B400E741E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A886F25D477B400E741E6 /* SceneDelegate.swift */; };
 		904A887725D477B600E741E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 904A887625D477B600E741E6 /* Assets.xcassets */; };
@@ -125,6 +126,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90468CA825D5C8FF001F084F /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		904A886A25D477B400E741E6 /* MLSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		904A886D25D477B400E741E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		904A886F25D477B400E741E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90468CA725D5C8EF001F084F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				90468CA825D5C8FF001F084F /* Double+Currency.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		904A886125D477B400E741E6 = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +382,7 @@
 		904A891E25D4B40100E741E6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				90468CA725D5C8EF001F084F /* Utils */,
 				90D5CD8225D546CB009049E7 /* Features */,
 				90D5CD6625D4CC12009049E7 /* Base */,
 				904A891F25D4B41700E741E6 /* Models */,
@@ -776,6 +787,7 @@
 				904A891525D4B3AF00E741E6 /* DetailRepository.swift in Sources */,
 				904A890E25D4B30500E741E6 /* ProductDetailService.swift in Sources */,
 				90634FAD25D59453004F83A5 /* SearchView.swift in Sources */,
+				90468CA925D5C8FF001F084F /* Double+Currency.swift in Sources */,
 				90FE105225D5A33600BA4378 /* CollectionViewCell.swift in Sources */,
 				90FE105925D5A4FE00BA4378 /* ProductCollectionViewCell.swift in Sources */,
 				90D5CD9825D54724009049E7 /* Presenter.swift in Sources */,

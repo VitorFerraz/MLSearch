@@ -12,4 +12,14 @@ struct SearchResult: Codable, Hashable {
     let price: Double?
     let thumbnail: String
     let title: String
+    let shipping: Shipping
 }
+
+struct Shipping: Codable, Hashable {
+    var freeShipping: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case freeShipping = "free_shipping"
+    }
+}
+

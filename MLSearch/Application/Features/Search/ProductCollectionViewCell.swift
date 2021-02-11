@@ -10,9 +10,44 @@ import DesignSystem
 
 class ProductCollectionViewCell: CollectionViewCell {
     
+    private let titleLabel: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 2
+        view.font = UIFont.preferredFont(forTextStyle: .title3)
+        return view
+    }()
+    
+    private let priceLabel: UILabel = {
+        let view = UILabel()
+        view.textColor = .systemGreen
+        view.font = UIFont.preferredFont(forTextStyle: .callout)
+        return view
+    }()
+    
+    private let freeShippingLabel: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.preferredFont(forTextStyle: .caption1)
+        return view
+    }()
+    
+    private let productImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.constrainWidth(80)
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+
+    
     private lazy var containerStack: UIStackView = {
-       let stack = UIStackView(arrangedSubviews: [])
-        stack.axis = .vertical
+        let container = UIStackView(arrangedSubviews: [titleLabel, priceLabel, freeShippingLabel])
+        container.axis = .vertical
+        container.alignment = .leading
+        let stack = UIStackView(arrangedSubviews: [productImageView,
+                                                   container])
+        stack.alignment = .center
+        stack.axis = .horizontal
         stack.spacing = 10
         return stack
     }()
@@ -36,7 +71,10 @@ class ProductCollectionViewCell: CollectionViewCell {
         containerStack.anchor(top: contentView.topAnchor,
                               leading: contentView.leadingAnchor,
                               bottom: contentView.bottomAnchor,
-                              trailing: contentView.trailingAnchor)
+                              trailing: contentView.trailingAnchor, padding: .init(top: 0,
+                                                                                   left: StyleGuide.Spacing.base,
+                                                                                   bottom: 0,
+                                                                                   right: StyleGuide.Spacing.base))
     }
     
     
@@ -46,10 +84,16 @@ class ProductCollectionViewCell: CollectionViewCell {
     }
     
     private func clean() {
-        
+        titleLabel.text = nil
+        priceLabel.text = nil
+        freeShippingLabel.text = nil
+        productImageView.image = nil
     }
     
     func configureWith(viewModel: ProductViewModel) {
-        
+        titleLabel.text = viewModel.name
+        priceLabel.text = viewModel.price
+        freeShippingLabel.text = viewModel.freeShipping
+        productImageView.setImageFrom(url: viewModel.image)
     }
 }
