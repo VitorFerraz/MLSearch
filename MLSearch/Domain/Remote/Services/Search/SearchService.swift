@@ -8,7 +8,7 @@
 import Foundation
 import RequestNetwork
 
-enum SearchRequest: Service {
+enum SearchService: Service {
     case searchBy(text: String)
     
     var path: String {

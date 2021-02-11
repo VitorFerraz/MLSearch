@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import RequestNetwork
 
 enum ProductDetailService: Service {
