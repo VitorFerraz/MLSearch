@@ -57,6 +57,10 @@ extension DetailViewController: DetailViewControllerProtocol {
 }
 
 extension DetailViewController: DetailViewDelegate {
+    func openExternalLink(link: URL?) {
+        presenter?.openExternalLink(link: link)
+    }
+    
     func getViewModel() -> DetailViewModel? {
         presenter?.getViewModel()
     }

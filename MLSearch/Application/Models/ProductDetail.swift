@@ -15,6 +15,7 @@ struct ProductDetail: Codable, Hashable {
     let thumbnail: String?
     let permalink: String
     let shipping: Shipping
+    let sellerAddress: SellerAddress
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,6 +25,17 @@ struct ProductDetail: Codable, Hashable {
         case soldQuantity = "sold_quantity"
         case permalink
         case shipping
+        case sellerAddress = "seller_address"
     }
 }
 
+struct SellerAddress: Codable, Hashable {
+    struct City: Codable, Hashable {
+        let name: String?
+    }
+    struct State: Codable, Hashable {
+        let name: String?
+    }
+    let city: City?
+    let state: State?
+}

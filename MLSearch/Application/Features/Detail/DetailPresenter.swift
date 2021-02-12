@@ -10,6 +10,7 @@ import Foundation
 protocol DetailPresenterProtocol {
     func onViewDidLoad()
     func getViewModel() -> DetailViewModel?
+    func openExternalLink(link: URL?)
 }
 
 final class DetailPresenter {
@@ -30,6 +31,10 @@ final class DetailPresenter {
 }
 
 extension DetailPresenter: DetailPresenterProtocol {
+    func openExternalLink(link: URL?) {
+        router.openExternalLink(link: link)
+    }
+    
     func getViewModel() -> DetailViewModel? {
         viewModel
     }

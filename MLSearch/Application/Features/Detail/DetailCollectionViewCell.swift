@@ -19,20 +19,26 @@ class DetailCollectionViewCell: CollectionViewCell {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 2
-        view.font = UIFont.preferredFont(forTextStyle: .title3)
+        view.font = UIFont.preferredFont(forTextStyle: .title1)
         return view
     }()
     
     private let priceLabel: UILabel = {
         let view = UILabel()
         view.textColor = .systemGreen
-        view.font = UIFont.preferredFont(forTextStyle: .callout)
+        view.font = UIFont.preferredFont(forTextStyle: .title1)
         return view
     }()
     
     private let freeShippingLabel: UILabel = {
         let view = UILabel()
-        view.font = UIFont.preferredFont(forTextStyle: .caption1)
+        view.font = UIFont.preferredFont(forTextStyle: .title2)
+        return view
+    }()
+    
+    private let addressLabel: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.preferredFont(forTextStyle: .subheadline)
         return view
     }()
     
@@ -63,7 +69,10 @@ class DetailCollectionViewCell: CollectionViewCell {
         container.axis = .vertical
         container.alignment = .leading
         let stack = UIStackView(arrangedSubviews: [productImageView,
-                                                   container, openExternalLinkButton, UIView()])
+                                                   container,
+                                                   addressLabel,
+                                                   openExternalLinkButton,
+                                                   UIView()])
         stack.alignment = .fill
         stack.axis = .vertical
         stack.spacing = 10
@@ -113,5 +122,6 @@ class DetailCollectionViewCell: CollectionViewCell {
         freeShippingLabel.text = viewModel.freeShipping
         productImageView.setImageFrom(url: viewModel.image)
         externalLink = viewModel.link
+        addressLabel.text = viewModel.address
     }
 }

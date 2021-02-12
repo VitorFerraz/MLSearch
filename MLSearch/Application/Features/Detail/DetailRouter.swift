@@ -24,5 +24,10 @@ final class DetailRouter: Router {
         viewController.presenter = presenter
         return viewController
     }
+    
+    func openExternalLink(link: URL?) {
+        guard let url = link else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 

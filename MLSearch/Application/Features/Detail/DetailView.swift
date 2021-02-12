@@ -8,32 +8,11 @@
 import UIKit
 import DesignSystem
 
-struct DetailViewModel: Hashable {
-    var model : ProductDetail
-    
-    var title: String {
-        model.title ?? ""
-    }
-    
-    var price: String {
-        model.price?.toCurrency ?? ""
-    }
-    
-    var freeShipping: String {
-        model.shipping.freeShipping ? "FRETE GRATUITO" : ""
-    }
-    
-    var link: URL? {
-        URL(string: model.permalink)
-    }
-    
-    var image: String? {
-        model.thumbnail
-    }
-}
+
 
 protocol DetailViewDelegate: class {
     func getViewModel() -> DetailViewModel?
+    func openExternalLink(link: URL?)
 }
 protocol DetailViewProtocol {
     func showLoading()
@@ -58,6 +37,7 @@ final class DetailView: UIView, ViewConfigurator {
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: DetailCollectionViewCell.self),
                     for: indexPath) as? DetailCollectionViewCell
+                cell?.delegate = self
                 cell?.configureWith(viewModel: viewModel)
                 return cell
             })
@@ -137,6 +117,12 @@ extension DetailView: SearchViewProtocol {
     }
 }
 
+
+extension DetailView: DetailCollectionViewCellDelegate {
+    func openExternalLink(link: URL?) {
+        delegate?.openExternalLink(link: link)
+    }
+}
 
 extension DetailView: UICollectionViewDelegateFlowLayout, UICollisionBehaviorDelegate {
     func applySnapshot(animatingDifferences: Bool = true) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902AB6F725D731E000FF642B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902AB6F625D731E000FF642B /* DetailViewModel.swift */; };
 		90380CF625D6E9C6009A373F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90380CF525D6E9C6009A373F /* DetailView.swift */; };
 		90380CFD25D6EAFB009A373F /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */; };
 		90468CA925D5C8FF001F084F /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90468CA825D5C8FF001F084F /* Double+Currency.swift */; };
@@ -128,6 +129,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		902AB6F625D731E000FF642B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		90380CF525D6E9C6009A373F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		90468CA825D5C8FF001F084F /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 				90D5CDC925D54BA4009049E7 /* DetailRouter.swift */,
 				90380CF525D6E9C6009A373F /* DetailView.swift */,
 				90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */,
+				902AB6F625D731E000FF642B /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				90D5CDBC25D54B46009049E7 /* DetailPresenter.swift in Sources */,
 				904A892825D4B44500E741E6 /* ProductDetail.swift in Sources */,
 				90D5CDAD25D547D5009049E7 /* Router.swift in Sources */,
+				902AB6F725D731E000FF642B /* DetailViewModel.swift in Sources */,
 				90D5CDB525D54B20009049E7 /* DetailViewController.swift in Sources */,
 				904A892225D4B43600E741E6 /* ProductDetailResponse.swift in Sources */,
 				90380CF625D6E9C6009A373F /* DetailView.swift in Sources */,
