@@ -13,6 +13,10 @@ struct ProductViewModel: Hashable {
     init(_ model: SearchResult) {
         self.searchResult = model
     }
+    
+    var id: String {
+        searchResult.id
+    }
     var name: String {
         searchResult.title
     }

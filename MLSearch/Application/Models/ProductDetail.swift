@@ -7,30 +7,23 @@
 
 import Foundation
 
-struct ProductDetail: Codable {
+struct ProductDetail: Codable, Hashable {
     let id: String
     let title: String?
     let price: Double?
     let soldQuantity: Int
-    let pictures: [ProductDetailPicture]
+    let thumbnail: String?
+    let permalink: String
+    let shipping: Shipping
 
     enum CodingKeys: String, CodingKey {
         case id
         case title = "name"
         case price
-        case pictures
+        case thumbnail
         case soldQuantity = "sold_quantity"
-    }
-}
-
-
-struct ProductDetailPicture: Codable {
-    let id: String
-    let url: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case url = "secure_url"
+        case permalink
+        case shipping
     }
 }
 

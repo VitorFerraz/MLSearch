@@ -8,9 +8,9 @@
 import Foundation
 
 protocol SearchPresenterProtocol {
-    var count: Int { get }
     func getViewModels() -> [ProductViewModel]
     func onDidSearchText(text: String)
+    func showProductDetail(viewModel: ProductViewModel)
     
 }
 
@@ -18,10 +18,6 @@ final class SearchPresenter: Presenter {
     typealias Interactor = SearchInteractor
     typealias Router = SearchRouter
     var viewModels: [ProductViewModel] = []
-    
-    var count: Int {
-        viewModels.count
-    }
     
     var interactor: SearchInteractor
     var router: SearchRouter
@@ -34,6 +30,11 @@ final class SearchPresenter: Presenter {
 }
 
 extension SearchPresenter: SearchPresenterProtocol {
+    
+    func showProductDetail(viewModel: ProductViewModel) {
+        router.showProductDetail(viewModel)
+    }
+    
     func getViewModels() -> [ProductViewModel] {
         viewModels
     }

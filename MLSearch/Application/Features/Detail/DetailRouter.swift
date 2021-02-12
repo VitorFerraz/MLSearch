@@ -14,11 +14,11 @@ final class DetailRouter: Router {
         self.rootViewController = rootViewController
     }
     
-    static func buildStructure(repository: DetailRepository = DetailRemoteRepository()) -> UIViewController {
+    static func buildStructure(productId: String,repository: DetailRepository = DetailRemoteRepository()) -> UIViewController {
         let viewController = DetailViewController()
         let router  = DetailRouter(rootViewController: viewController)
-        let interactor  = DetailInteractor()
-        let presenter = DetailPresenter(interactor, router)
+        let interactor  = DetailInteractor(repository: repository)
+        let presenter = DetailPresenter(interactor, router, id: productId)
         interactor.output = presenter
         presenter.view = viewController
         viewController.presenter = presenter

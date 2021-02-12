@@ -30,4 +30,8 @@ final class SearchRouter: Router {
         rootViewController.navigationBar.tintColor = StyleGuide.Color.primary
         return rootViewController
     }
+    
+    func showProductDetail(_ viewModel: ProductViewModel) {
+        rootViewController?.present(DetailRouter.buildStructure(productId: viewModel.id), animated: true, completion: nil)
+    }
 }

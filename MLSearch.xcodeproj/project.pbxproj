@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90380CF625D6E9C6009A373F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90380CF525D6E9C6009A373F /* DetailView.swift */; };
+		90380CFD25D6EAFB009A373F /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */; };
 		90468CA925D5C8FF001F084F /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90468CA825D5C8FF001F084F /* Double+Currency.swift */; };
 		904A886E25D477B400E741E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A886D25D477B400E741E6 /* AppDelegate.swift */; };
 		904A887025D477B400E741E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A886F25D477B400E741E6 /* SceneDelegate.swift */; };
@@ -126,6 +128,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90380CF525D6E9C6009A373F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		90468CA825D5C8FF001F084F /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		904A886A25D477B400E741E6 /* MLSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		904A886D25D477B400E741E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 				90D5CDBB25D54B46009049E7 /* DetailPresenter.swift */,
 				90D5CDC225D54B7D009049E7 /* DetailInteractor.swift */,
 				90D5CDC925D54BA4009049E7 /* DetailRouter.swift */,
+				90380CF525D6E9C6009A373F /* DetailView.swift */,
+				90380CFC25D6EAFB009A373F /* DetailCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -797,6 +803,7 @@
 				90D5CDAD25D547D5009049E7 /* Router.swift in Sources */,
 				90D5CDB525D54B20009049E7 /* DetailViewController.swift in Sources */,
 				904A892225D4B43600E741E6 /* ProductDetailResponse.swift in Sources */,
+				90380CF625D6E9C6009A373F /* DetailView.swift in Sources */,
 				90FE106025D5A57100BA4378 /* ProductViewModel.swift in Sources */,
 				90D5CD6825D4CC16009049E7 /* ViewController.swift in Sources */,
 				90D5CCDF25D4C616009049E7 /* SearchRemoteRepository.swift in Sources */,
@@ -804,6 +811,7 @@
 				904A892E25D4B4F600E741E6 /* DetailRemoteRepository.swift in Sources */,
 				90D5CCD325D4C5A4009049E7 /* SearchResponse.swift in Sources */,
 				90D5CD8525D546E9009049E7 /* SearchViewController.swift in Sources */,
+				90380CFD25D6EAFB009A373F /* DetailCollectionViewCell.swift in Sources */,
 				90D5CDA625D547C7009049E7 /* SearchRouter.swift in Sources */,
 				904A88F225D4B15E00E741E6 /* SearchService.swift in Sources */,
 				90D5CCC925D4C57B009049E7 /* SearchRepository.swift in Sources */,

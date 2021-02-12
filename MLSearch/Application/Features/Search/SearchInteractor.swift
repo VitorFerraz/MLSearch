@@ -8,9 +8,9 @@
 import Foundation
 
 protocol SearchInteractorOutputProtocol: AnyObject {
-   func showLoading()
+    func showLoading()
     func showResults(viewModels: [ProductViewModel])
-   func showError(with message: String)
+    func showError(with message: String)
 }
 
 protocol SearchInteractorProtocol: AnyObject {

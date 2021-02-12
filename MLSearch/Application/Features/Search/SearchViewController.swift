@@ -61,16 +61,12 @@ extension SearchViewController: SearchViewControllerProtocol {
 }
 
 extension SearchViewController: SearchViewDelegate {
-    func getListCount() -> Int {
-        presenter?.count ?? 0
+    func didTapProduct(_ viewModel: ProductViewModel) {
+        presenter?.showProductDetail(viewModel: viewModel)
     }
     
     func getViewModels() -> [ProductViewModel] {
         presenter?.getViewModels() ?? []
-    }
-    
-    func didTapProduct(at index: Int) {
-        //router
     }
     
     func didTapRetry(text: String) {

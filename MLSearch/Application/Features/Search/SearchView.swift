@@ -11,9 +11,8 @@ import DesignSystem
 protocol SearchViewDelegate: class {
     func didTapSearch(text: String)
     func didTapRetry(text: String)
-    func getListCount() -> Int
     func getViewModels() -> [ProductViewModel]
-    func didTapProduct(at index: Int)
+    func didTapProduct(_ viewModel: ProductViewModel)
 }
 
 protocol SearchViewProtocol {
@@ -175,5 +174,12 @@ extension SearchView: UICollectionViewDelegateFlowLayout, UICollisionBehaviorDel
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = dataSource.itemIdentifier(for: indexPath) else {
+          return
+        }
+        delegate?.didTapProduct(viewModel)
     }
 }

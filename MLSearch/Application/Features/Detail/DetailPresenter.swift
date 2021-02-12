@@ -8,27 +8,48 @@
 import Foundation
 
 protocol DetailPresenterProtocol {
-
+    func onViewDidLoad()
+    func getViewModel() -> DetailViewModel?
 }
 
-final class DetailPresenter: Presenter {
+final class DetailPresenter {
     typealias Interactor = DetailInteractor
     typealias Router = DetailRouter
     
     var interactor: DetailInteractor
     var router: DetailRouter
     weak var view: DetailViewControllerProtocol?
+    private var id: String = ""
+    var viewModel: DetailViewModel?
     
-    init(_ interactor: DetailInteractor, _ router: DetailRouter) {
+    init(_ interactor: DetailInteractor, _ router: DetailRouter, id: String) {
         self.interactor = interactor
         self.router = router
+        self.id = id
     }
 }
 
 extension DetailPresenter: DetailPresenterProtocol {
+    func getViewModel() -> DetailViewModel? {
+        viewModel
+    }
     
+    func onViewDidLoad() {
+        interactor.productDetail(for: id)
+    }
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
+    func showLoading() {
+        view?.showLoading()
+    }
     
+    func showResult(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+        view?.showResult()
+    }
+    
+    func showError(with message: String) {
+        view?.showError(with: message)
+    }
 }
