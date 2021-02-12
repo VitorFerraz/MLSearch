@@ -52,10 +52,8 @@ final class SearchView: UIView, ViewConfigurator {
         searchController.searchBar.delegate = self
         searchController.searchBar.textContentType = .none
         searchController.searchBar.placeholder = "Digite o nome de um produto aqui"
-        searchController.showsSearchResultsController = true
         searchController.searchBar.barTintColor = StyleGuide.Color.primary
         searchController.searchBar.layer.borderColor = StyleGuide.Color.primary.cgColor
-        searchController.searchBar.showsCancelButton = true
         searchController.searchBar.tintColor = StyleGuide.Color.Text.primary
         searchController.searchBar.searchTextField.backgroundColor = StyleGuide.Color.Background.white
         return searchController

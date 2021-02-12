@@ -8,7 +8,13 @@
 import UIKit
 import DesignSystem
 
+public protocol DetailCollectionViewCellDelegate: AnyObject {
+    func openExternalLink(link: URL?)
+}
+
 class DetailCollectionViewCell: CollectionViewCell {
+    weak var delegate: DetailCollectionViewCellDelegate?
+    private var externalLink: URL?
     
     private let titleLabel: UILabel = {
         let view = UILabel()
@@ -30,23 +36,35 @@ class DetailCollectionViewCell: CollectionViewCell {
         return view
     }()
     
-    private let productImageView: UIImageView = {
+    private lazy var productImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.constrainWidth(80)
+        imageView.contentMode = .scaleAspectFit
+        imageView.constrainHeight(self.frame.height * 0.3)
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
         return imageView
     }()
+    
+    private lazy var openExternalLinkButton: UIButton = {
+        let button = UIButton(type: .system, primaryAction: .init(handler: { [weak self]_ in
+            self?.didTapOpenExternalLink()
+        }))
+        button.setTitle("Abrir no navegador", for: .normal)
+        
+        return button
+    }()
 
+    private func didTapOpenExternalLink() {
+        delegate?.openExternalLink(link: externalLink)
+    }
     
     private lazy var containerStack: UIStackView = {
         let container = UIStackView(arrangedSubviews: [titleLabel, priceLabel, freeShippingLabel])
         container.axis = .vertical
         container.alignment = .leading
         let stack = UIStackView(arrangedSubviews: [productImageView,
-                                                   container])
-        stack.alignment = .center
+                                                   container, openExternalLinkButton, UIView()])
+        stack.alignment = .fill
         stack.axis = .vertical
         stack.spacing = 10
         return stack
@@ -71,12 +89,11 @@ class DetailCollectionViewCell: CollectionViewCell {
         containerStack.anchor(top: contentView.topAnchor,
                               leading: contentView.leadingAnchor,
                               bottom: contentView.bottomAnchor,
-                              trailing: contentView.trailingAnchor, padding: .init(top: 0,
+                              trailing: contentView.trailingAnchor, padding: .init(top: StyleGuide.Spacing.base,
                                                                                    left: StyleGuide.Spacing.base,
                                                                                    bottom: 0,
                                                                                    right: StyleGuide.Spacing.base))
     }
-    
     
     private func setup() {
         layoutIfNeeded()
@@ -91,9 +108,10 @@ class DetailCollectionViewCell: CollectionViewCell {
     }
     
     func configureWith(viewModel: DetailViewModel) {
-        titleLabel.text = "teste"
-//        priceLabel.text = viewModel.price
-//        freeShippingLabel.text = viewModel.freeShipping
-//        productImageView.setImageFrom(url: viewModel.image)
+        titleLabel.text = viewModel.title
+        priceLabel.text = viewModel.price
+        freeShippingLabel.text = viewModel.freeShipping
+        productImageView.setImageFrom(url: viewModel.image)
+        externalLink = viewModel.link
     }
 }

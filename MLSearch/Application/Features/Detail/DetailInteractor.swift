@@ -26,7 +26,6 @@ final class DetailInteractor {
     init(repository: DetailRepository) {
         self.repository = repository
     }
-
 }
 
 extension DetailInteractor: DetailInteractorProtocol {

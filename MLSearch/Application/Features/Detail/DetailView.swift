@@ -10,6 +10,26 @@ import DesignSystem
 
 struct DetailViewModel: Hashable {
     var model : ProductDetail
+    
+    var title: String {
+        model.title ?? ""
+    }
+    
+    var price: String {
+        model.price?.toCurrency ?? ""
+    }
+    
+    var freeShipping: String {
+        model.shipping.freeShipping ? "FRETE GRATUITO" : ""
+    }
+    
+    var link: URL? {
+        URL(string: model.permalink)
+    }
+    
+    var image: String? {
+        model.thumbnail
+    }
 }
 
 protocol DetailViewDelegate: class {
