@@ -36,7 +36,7 @@ public struct StyleGuide {
         public static let primary = UIColor(red: 1.00, green: 0.95, blue: 0.35, alpha: 1.00)
         
         public struct Background {
-            public static let lightGray = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
+            public static let lightGray = #colorLiteral(red: 0.937092483, green: 0.9372493625, blue: 0.9370718002, alpha: 1)
             public static let white = UIColor.white
         }
         

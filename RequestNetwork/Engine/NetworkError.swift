@@ -8,7 +8,6 @@
 import Foundation
 
 public enum NetworkError: String, Error {
-    case authentication
     case badRequest
     case failed
     case noData
@@ -17,5 +16,18 @@ public enum NetworkError: String, Error {
     
     var description: String {
         return rawValue
+    }
+    
+    
+}
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .badRequest, .decode, .noData, .failed:
+            return "Ops! Aconteceu um problema\n Tente novamente :)"
+        case .notConnected:
+            return "Ops! Parece que você está sem conexão com a internet :("
+        }
     }
 }
