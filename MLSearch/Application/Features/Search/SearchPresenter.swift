@@ -40,7 +40,11 @@ extension SearchPresenter: SearchPresenterProtocol {
     }
     
     func onDidSearchText(text: String) {
-        interactor.searchProducts(by: text)
+        if text.isEmpty {
+            view?.showError(with: "Ops, é necessário informar um título válido")
+        } else {
+            interactor.searchProducts(by: text)
+        }
     }
 }
 
