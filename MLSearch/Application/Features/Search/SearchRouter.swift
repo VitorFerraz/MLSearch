@@ -8,7 +8,12 @@
 import UIKit
 import DesignSystem
 
-final class SearchRouter: Router {
+protocol SearchRouterProtocol: Router {
+    func showProductDetail(_ viewModel: ProductViewModel)
+    static func buildStructure(repository: SearchRepository) -> UIViewController 
+}
+
+final class SearchRouter: SearchRouterProtocol {
     var rootViewController: UIViewController?
     
     init(rootViewController: UIViewController?) {

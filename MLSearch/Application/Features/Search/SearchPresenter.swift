@@ -16,14 +16,14 @@ protocol SearchPresenterProtocol {
 
 final class SearchPresenter: Presenter {
     typealias Interactor = SearchInteractor
-    typealias Router = SearchRouter
+    typealias Router = SearchRouterProtocol
     var viewModels: [ProductViewModel] = []
     
     var interactor: SearchInteractor
-    var router: SearchRouter
+    var router: SearchRouterProtocol
     weak var view: SearchViewControllerProtocol?
     
-    init(_ interactor: SearchInteractor, _ router: SearchRouter) {
+    init(_ interactor: SearchInteractor, _ router: SearchRouterProtocol) {
         self.interactor = interactor
         self.router = router
     }
