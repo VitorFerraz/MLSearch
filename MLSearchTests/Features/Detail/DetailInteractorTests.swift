@@ -21,8 +21,8 @@ final class DetailInteractorTests: QuickSpec {
             self.sut.output = self.outputMock
         }
         
-        describe("when use performs a search") {
-            context("with a product name") {
+        describe("when product detail is presented") {
+            context("with a product id") {
                 it("should return a valid response") {
                     let result = [ProductDetailResponse].parse(jsonFile: "DetailResult")!
 
@@ -35,7 +35,7 @@ final class DetailInteractorTests: QuickSpec {
                 }
             }
             
-            context("with a product name with error") {
+            context("with a product id with error") {
                 it("should return a error message") {
                     self.repositoryMock.result = .failure(MyError.default)
 
