@@ -74,6 +74,8 @@
 		90DE51D925D9AB3500A9CE69 /* SearchResults.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DE51BB25D9A75F00A9CE69 /* SearchResults.json */; };
 		90DE51DF25D9AB6000A9CE69 /* JsonFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE51C325D9A7C700A9CE69 /* JsonFromFile.swift */; };
 		90DE51E625D9AFD600A9CE69 /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE51E525D9AFD600A9CE69 /* SearchPresenterTests.swift */; };
+		90DE51ED25D9BC9800A9CE69 /* SearchSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE51EC25D9BC9800A9CE69 /* SearchSnapshotTests.swift */; };
+		90DE51F525D9BDBA00A9CE69 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 90DE51F425D9BDBA00A9CE69 /* SnapshotTesting */; };
 		90FE105225D5A33600BA4378 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105125D5A33600BA4378 /* CollectionViewCell.swift */; };
 		90FE105925D5A4FE00BA4378 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */; };
 		90FE106025D5A57100BA4378 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105F25D5A57100BA4378 /* ProductViewModel.swift */; };
@@ -210,6 +212,7 @@
 		90DE51BB25D9A75F00A9CE69 /* SearchResults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResults.json; sourceTree = "<group>"; };
 		90DE51C325D9A7C700A9CE69 /* JsonFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFromFile.swift; sourceTree = "<group>"; };
 		90DE51E525D9AFD600A9CE69 /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
+		90DE51EC25D9BC9800A9CE69 /* SearchSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSnapshotTests.swift; sourceTree = "<group>"; };
 		90FE105125D5A33600BA4378 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		90FE105F25D5A57100BA4378 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DE51F525D9BDBA00A9CE69 /* SnapshotTesting in Frameworks */,
 				90DE519225D99B3900A9CE69 /* Quick in Frameworks */,
 				90DE518A25D99AD500A9CE69 /* Nimble in Frameworks */,
 			);
@@ -597,6 +601,7 @@
 				90DE519F25D9A08600A9CE69 /* ProductViewModelTests.swift */,
 				90DE51A625D9A2B200A9CE69 /* SearchInteractorTests.swift */,
 				90DE51E525D9AFD600A9CE69 /* SearchPresenterTests.swift */,
+				90DE51EC25D9BC9800A9CE69 /* SearchSnapshotTests.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -668,6 +673,7 @@
 			packageProductDependencies = (
 				90DE518925D99AD500A9CE69 /* Nimble */,
 				90DE519125D99B3900A9CE69 /* Quick */,
+				90DE51F425D9BDBA00A9CE69 /* SnapshotTesting */,
 			);
 			productName = MLSearchTests;
 			productReference = 904A888025D477B600E741E6 /* MLSearchTests.xctest */;
@@ -791,6 +797,7 @@
 			packageReferences = (
 				90DE518825D99AD500A9CE69 /* XCRemoteSwiftPackageReference "Nimble" */,
 				90DE519025D99B3900A9CE69 /* XCRemoteSwiftPackageReference "Quick" */,
+				90DE51F325D9BDBA00A9CE69 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 904A886B25D477B400E741E6 /* Products */;
 			projectDirPath = "";
@@ -904,6 +911,7 @@
 				90DE51AE25D9A53F00A9CE69 /* SearchRepositoryMock.swift in Sources */,
 				90DE51C425D9A7C700A9CE69 /* JsonFromFile.swift in Sources */,
 				90DE51E625D9AFD600A9CE69 /* SearchPresenterTests.swift in Sources */,
+				90DE51ED25D9BC9800A9CE69 /* SearchSnapshotTests.swift in Sources */,
 				90DE519925D99B9300A9CE69 /* SearchRouterTests.swift in Sources */,
 				90DE51A725D9A2B200A9CE69 /* SearchInteractorTests.swift in Sources */,
 			);
@@ -1468,6 +1476,14 @@
 				minimumVersion = 3.1.2;
 			};
 		};
+		90DE51F325D9BDBA00A9CE69 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1480,6 +1496,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90DE519025D99B3900A9CE69 /* XCRemoteSwiftPackageReference "Quick" */;
 			productName = Quick;
+		};
+		90DE51F425D9BDBA00A9CE69 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90DE51F325D9BDBA00A9CE69 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
