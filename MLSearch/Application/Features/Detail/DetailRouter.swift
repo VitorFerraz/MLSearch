@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class DetailRouter: Router {
+protocol DetailRouterProtocol: Router {
+    static func buildStructure(productId: String,repository: DetailRepository) -> UIViewController
+    func openExternalLink(link: URL?)
+}
+
+final class DetailRouter: DetailRouterProtocol {
     var rootViewController: UIViewController?
     
     init(rootViewController: UIViewController?) {

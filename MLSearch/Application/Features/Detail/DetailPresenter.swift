@@ -15,15 +15,15 @@ protocol DetailPresenterProtocol {
 
 final class DetailPresenter {
     typealias Interactor = DetailInteractor
-    typealias Router = DetailRouter
+    typealias Router = DetailRouterProtocol
     
     var interactor: DetailInteractor
-    var router: DetailRouter
+    var router: DetailRouterProtocol
     weak var view: DetailViewControllerProtocol?
     private var id: String = ""
     var viewModel: DetailViewModel?
     
-    init(_ interactor: DetailInteractor, _ router: DetailRouter, id: String) {
+    init(_ interactor: DetailInteractor, _ router: DetailRouterProtocol, id: String) {
         self.interactor = interactor
         self.router = router
         self.id = id

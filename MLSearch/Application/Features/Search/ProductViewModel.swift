@@ -30,6 +30,6 @@ struct ProductViewModel: Hashable {
     }
     
     var price: String {
-        searchResult.price?.toCurrency() ?? ""
+        searchResult.price?.currency ?? ""
     }
 }

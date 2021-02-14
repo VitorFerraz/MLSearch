@@ -18,15 +18,11 @@ extension NumberFormatter {
 
 
 public extension Double {
-    var toCurrency: String {
-        return self.toCurrency()
+    var currency: String {
+        return self.formatCurrency()
     }
 
-    var toCurrencySigned: String {
-        return self.toCurrency(signed: true)
-    }
-
-    func toCurrency(fraction min: Int? = nil, max: Int? = nil, signed: Bool = false) -> String {
+    func formatCurrency(fraction min: Int? = 2, max: Int? = 2, signed: Bool = false) -> String {
         let formatter = NumberFormatter.currencyFormatter
         formatter.numberStyle = .currency
 

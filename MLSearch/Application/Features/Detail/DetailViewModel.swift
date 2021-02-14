@@ -14,7 +14,7 @@ struct DetailViewModel: Hashable {
     }
     
     var price: String {
-        model.price?.toCurrency ?? ""
+        model.price?.currency ?? ""
     }
     
     var freeShipping: String {

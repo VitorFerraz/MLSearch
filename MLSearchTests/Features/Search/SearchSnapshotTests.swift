@@ -49,8 +49,6 @@ class SearchSnapshotTests: QuickSpec {
     }
 }
 
-
-
 func putInViewHierarchy(_ vc: UIViewController) {
     let window = UIApplication.shared.windows.first!
     window.rootViewController = vc
