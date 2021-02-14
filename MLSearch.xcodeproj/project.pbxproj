@@ -78,6 +78,11 @@
 		90DE51F525D9BDBA00A9CE69 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 90DE51F425D9BDBA00A9CE69 /* SnapshotTesting */; };
 		90DE51FD25D9C84500A9CE69 /* DetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE51FC25D9C84500A9CE69 /* DetailRouterTests.swift */; };
 		90DE520925D9C99C00A9CE69 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE520825D9C99C00A9CE69 /* DetailViewModelTests.swift */; };
+		90DE521025D9CAE000A9CE69 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE520F25D9CAE000A9CE69 /* DetailInteractorTests.swift */; };
+		90DE521725D9CB6500A9CE69 /* DetailRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE521625D9CB6500A9CE69 /* DetailRepositoryMock.swift */; };
+		90DE522325D9CBCA00A9CE69 /* DetailInteractorOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE522225D9CBCA00A9CE69 /* DetailInteractorOutputSpy.swift */; };
+		90DE522F25D9CCA000A9CE69 /* DetailResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DE522E25D9CCA000A9CE69 /* DetailResult.json */; };
+		90DE523525D9CD0E00A9CE69 /* DetailResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DE522E25D9CCA000A9CE69 /* DetailResult.json */; };
 		90FE105225D5A33600BA4378 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105125D5A33600BA4378 /* CollectionViewCell.swift */; };
 		90FE105925D5A4FE00BA4378 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */; };
 		90FE106025D5A57100BA4378 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE105F25D5A57100BA4378 /* ProductViewModel.swift */; };
@@ -217,6 +222,10 @@
 		90DE51EC25D9BC9800A9CE69 /* SearchSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSnapshotTests.swift; sourceTree = "<group>"; };
 		90DE51FC25D9C84500A9CE69 /* DetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterTests.swift; sourceTree = "<group>"; };
 		90DE520825D9C99C00A9CE69 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		90DE520F25D9CAE000A9CE69 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		90DE521625D9CB6500A9CE69 /* DetailRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryMock.swift; sourceTree = "<group>"; };
+		90DE522225D9CBCA00A9CE69 /* DetailInteractorOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorOutputSpy.swift; sourceTree = "<group>"; };
+		90DE522E25D9CCA000A9CE69 /* DetailResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DetailResult.json; sourceTree = "<group>"; };
 		90FE105125D5A33600BA4378 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		90FE105825D5A4FE00BA4378 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		90FE105F25D5A57100BA4378 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -583,9 +592,12 @@
 		90DE518525D99A3800A9CE69 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				90DE522225D9CBCA00A9CE69 /* DetailInteractorOutputSpy.swift */,
+				90DE521625D9CB6500A9CE69 /* DetailRepositoryMock.swift */,
 				90DE51AD25D9A53F00A9CE69 /* SearchRepositoryMock.swift */,
 				90DE51B425D9A6CC00A9CE69 /* SearchInteractorOutputSpy.swift */,
 				90DE51BB25D9A75F00A9CE69 /* SearchResults.json */,
+				90DE522E25D9CCA000A9CE69 /* DetailResult.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -624,6 +636,7 @@
 			children = (
 				90DE51FC25D9C84500A9CE69 /* DetailRouterTests.swift */,
 				90DE520825D9C99C00A9CE69 /* DetailViewModelTests.swift */,
+				90DE520F25D9CAE000A9CE69 /* DetailInteractorTests.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -835,6 +848,7 @@
 				904A887A25D477B600E741E6 /* LaunchScreen.storyboard in Resources */,
 				90DE51D925D9AB3500A9CE69 /* SearchResults.json in Resources */,
 				904A887725D477B600E741E6 /* Assets.xcassets in Resources */,
+				90DE523525D9CD0E00A9CE69 /* DetailResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +857,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90DE51BC25D9A75F00A9CE69 /* SearchResults.json in Resources */,
+				90DE522F25D9CCA000A9CE69 /* DetailResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,13 +935,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DE521025D9CAE000A9CE69 /* DetailInteractorTests.swift in Sources */,
 				90DE51FD25D9C84500A9CE69 /* DetailRouterTests.swift in Sources */,
 				90DE520925D9C99C00A9CE69 /* DetailViewModelTests.swift in Sources */,
 				90DE51B525D9A6CC00A9CE69 /* SearchInteractorOutputSpy.swift in Sources */,
 				90DE51A025D9A08600A9CE69 /* ProductViewModelTests.swift in Sources */,
 				90DE51AE25D9A53F00A9CE69 /* SearchRepositoryMock.swift in Sources */,
+				90DE521725D9CB6500A9CE69 /* DetailRepositoryMock.swift in Sources */,
 				90DE51C425D9A7C700A9CE69 /* JsonFromFile.swift in Sources */,
 				90DE51E625D9AFD600A9CE69 /* SearchPresenterTests.swift in Sources */,
+				90DE522325D9CBCA00A9CE69 /* DetailInteractorOutputSpy.swift in Sources */,
 				90DE51ED25D9BC9800A9CE69 /* SearchSnapshotTests.swift in Sources */,
 				90DE519925D99B9300A9CE69 /* SearchRouterTests.swift in Sources */,
 				90DE51A725D9A2B200A9CE69 /* SearchInteractorTests.swift in Sources */,
