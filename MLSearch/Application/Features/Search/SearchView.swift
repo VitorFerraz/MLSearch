@@ -45,9 +45,11 @@ final class SearchView: UIView, ViewConfigurator {
     }()
     
     var text: String?
-
+    
     lazy var searchController: UISearchController = {
-        let searchController = UISearchController()
+        let templateVc = SearchBarViewController()
+        templateVc.view.backgroundColor = .white
+        let searchController = UISearchController(searchResultsController: templateVc)
         searchController.obscuresBackgroundDuringPresentation = true
         searchController.searchBar.delegate = self
         searchController.searchBar.textContentType = .none
@@ -56,6 +58,7 @@ final class SearchView: UIView, ViewConfigurator {
         searchController.searchBar.layer.borderColor = StyleGuide.Color.primary.cgColor
         searchController.searchBar.tintColor = StyleGuide.Color.Text.primary
         searchController.searchBar.searchTextField.backgroundColor = StyleGuide.Color.Background.white
+        searchController.showsSearchResultsController = true
         return searchController
     }()
     
