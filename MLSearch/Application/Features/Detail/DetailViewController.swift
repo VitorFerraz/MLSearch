@@ -57,6 +57,10 @@ extension DetailViewController: DetailViewControllerProtocol {
 }
 
 extension DetailViewController: DetailViewDelegate {
+    func didTapRetry() {
+        presenter?.onDidTapRetry()
+    }
+    
     func openExternalLink(link: URL?) {
         presenter?.openExternalLink(link: link)
     }

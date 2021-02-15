@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DetailPresenterProtocol {
+    func onDidTapRetry()
     func onViewDidLoad()
     func getViewModel() -> DetailViewModel?
     func openExternalLink(link: URL?)
@@ -31,6 +32,10 @@ final class DetailPresenter {
 }
 
 extension DetailPresenter: DetailPresenterProtocol {
+    func onDidTapRetry() {
+        interactor.productDetail(for: id)
+    }
+    
     func openExternalLink(link: URL?) {
         router.openExternalLink(link: link)
     }

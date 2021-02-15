@@ -13,6 +13,7 @@ import DesignSystem
 protocol DetailViewDelegate: class {
     func getViewModel() -> DetailViewModel?
     func openExternalLink(link: URL?)
+    func didTapRetry()
 }
 protocol DetailViewProtocol {
     func showLoading()
@@ -94,7 +95,7 @@ final class DetailView: UIView, ViewConfigurator {
 
 extension DetailView: LoadingViewDelegate {
     func didTapRetry() {
-     
+        delegate?.didTapRetry()
     }
 }
 
