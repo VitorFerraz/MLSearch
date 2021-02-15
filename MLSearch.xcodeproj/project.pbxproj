@@ -36,6 +36,8 @@
 		904A898325D4BE1A00E741E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A88DC25D4B00B00E741E6 /* HTTPMethod.swift */; };
 		904A898425D4BE1A00E741E6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A88E225D4B07A00E741E6 /* Reachability.swift */; };
 		90634FAD25D59453004F83A5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90634FAC25D59453004F83A5 /* SearchView.swift */; };
+		90D56B5125DAE20D00E30770 /* RequestNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904A894A25D4BD9600E741E6 /* RequestNetwork.framework */; };
+		90D56B5225DAE20D00E30770 /* RequestNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 904A894A25D4BD9600E741E6 /* RequestNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		90D5CCC925D4C57B009049E7 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCC825D4C57B009049E7 /* SearchRepository.swift */; };
 		90D5CCD325D4C5A4009049E7 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCD225D4C5A4009049E7 /* SearchResponse.swift */; };
 		90D5CCD925D4C5BE009049E7 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D5CCD825D4C5BE009049E7 /* SearchResult.swift */; };
@@ -126,6 +128,13 @@
 			remoteGlobalIDString = 904A894925D4BD9600E741E6;
 			remoteInfo = RequestNetwork;
 		};
+		90D56B5325DAE20D00E30770 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 904A886225D477B400E741E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 904A894925D4BD9600E741E6;
+			remoteInfo = RequestNetwork;
+		};
 		90D5CD0425D4C8EF009049E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 904A886225D477B400E741E6 /* Project object */;
@@ -144,6 +153,17 @@
 			files = (
 				904A896025D4BD9600E741E6 /* RequestNetwork.framework in Embed Frameworks */,
 				90D5CD0725D4C8EF009049E7 /* DesignSystem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90D56B5525DAE20D00E30770 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				90D56B5225DAE20D00E30770 /* RequestNetwork.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D56B5125DAE20D00E30770 /* RequestNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +326,7 @@
 				904A895825D4BD9600E741E6 /* RequestNetworkTests */,
 				90D5CD0025D4C8EF009049E7 /* DesignSystem */,
 				904A886B25D477B400E741E6 /* Products */,
+				90D56B5025DAE20D00E30770 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -467,6 +489,13 @@
 				904A895B25D4BD9600E741E6 /* Info.plist */,
 			);
 			path = RequestNetworkTests;
+			sourceTree = "<group>";
+		};
+		90D56B5025DAE20D00E30770 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		90D5CCC725D4C56C009049E7 /* Search */ = {
@@ -775,10 +804,12 @@
 				90D5CCFB25D4C8EF009049E7 /* Sources */,
 				90D5CCFC25D4C8EF009049E7 /* Frameworks */,
 				90D5CCFD25D4C8EF009049E7 /* Resources */,
+				90D56B5525DAE20D00E30770 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				90D56B5425DAE20D00E30770 /* PBXTargetDependency */,
 			);
 			name = DesignSystem;
 			productName = DesignSystem;
@@ -1032,6 +1063,11 @@
 			isa = PBXTargetDependency;
 			target = 904A894925D4BD9600E741E6 /* RequestNetwork */;
 			targetProxy = 904A895D25D4BD9600E741E6 /* PBXContainerItemProxy */;
+		};
+		90D56B5425DAE20D00E30770 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 904A894925D4BD9600E741E6 /* RequestNetwork */;
+			targetProxy = 90D56B5325DAE20D00E30770 /* PBXContainerItemProxy */;
 		};
 		90D5CD0525D4C8EF009049E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
