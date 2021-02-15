@@ -16,9 +16,9 @@ final class DetailRouterTests: QuickSpec {
         
         describe("setup router") {
             context("with correct rootViewController") {
-                it("should have a navigation controller as root") {
+                it("should have a view controller as root") {
                     let rootViewController = DetailRouter.buildStructure(productId: "teste")
-                    expect(rootViewController).to(beAKindOf(UINavigationController.self))
+                    expect(rootViewController).to(beAKindOf(UIViewController.self))
                 }
             }
         }
