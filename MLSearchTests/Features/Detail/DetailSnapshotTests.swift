@@ -22,6 +22,9 @@ class DetailSnapshotTests: QuickSpec {
             beforeEach {
                 self.repository = DetailRepositoryMock()
                 self.rootViewController = DetailRouter.buildStructure(productId: "teste", repository: self.repository)
+                //If the snapshot test failed you may enable record to take a new snapshot using your simulator
+                //Try using the iPhone 12 simulator
+                //isRecording = true
             }
             
             context("with multiple devices") {
