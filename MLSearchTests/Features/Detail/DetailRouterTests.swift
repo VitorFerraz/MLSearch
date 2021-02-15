@@ -25,7 +25,7 @@ final class DetailRouterTests: QuickSpec {
         
         describe("navigation") {
             context("when user clicks on open link") {
-                fit("should open link on browser") {
+                it("should open link on browser") {
                     self.sut.openExternalLink(link: nil)
                     let routerSpy = self.sut as? DetailRouterSpy
                     expect(routerSpy?.didOpenExternalLink).to(beTrue())

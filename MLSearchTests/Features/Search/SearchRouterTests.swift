@@ -25,7 +25,7 @@ final class SearchRouterTests: QuickSpec {
         
         describe("navigation") {
             context("when user clicks on product") {
-                fit("should call show product detail") {
+                it("should call show product detail") {
                     self.sut.showProductDetail(.init(.init(id: "", price: 0, thumbnail: "", title: "", shipping: .init(freeShipping: false))))
                     let routerSpy = self.sut as? SearchRouterSpy
                     expect(routerSpy?.didCallShowProductDetail).to(beTrue())
